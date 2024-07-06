@@ -33,12 +33,12 @@ export default function NewTransaction() {
   const handleSubmit = (e) => {
     e.preventDefault();
     createTransaction(form).then((newTransaction) => {
-      navigate(`/transactions/${newTransaction.id}`); // redirect to the created transaction's show page
+      navigate(`/transactions/${newTransaction.id}`);
     });
   };
 
   return (
-    <div>
+    <div className="new-form-container">
       <h1>New Transaction</h1>
       <form onSubmit={handleSubmit}>
         <div>
