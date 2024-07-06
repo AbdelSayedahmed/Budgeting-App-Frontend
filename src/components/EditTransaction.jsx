@@ -18,15 +18,14 @@ export default function EditTransaction() {
       .then((data) => setForm(data));
   }, [id]);
 
-  function updateTransaction(transaction) {
+  async function updateTransaction(transaction) {
     const options = {
       method: "PUT",
       body: JSON.stringify(transaction),
       headers: { "Content-Type": "application/json" },
     };
-    return fetch(`http://localhost:6298/transactions/${id}`, options).then(
-      (response) => response.json()
-    );
+    const response = await fetch(`http://localhost:6298/transactions/${id}`, options);
+      return await response.json();
   }
 
   const handleChange = (e) => {

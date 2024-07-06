@@ -11,15 +11,14 @@ export default function NewTransaction() {
     category: "",
   });
 
-  function createTransaction(transaction) {
+  async function createTransaction(transaction) {
     const options = {
       method: "POST",
       body: JSON.stringify(transaction),
       headers: { "Content-Type": "application/json" },
     };
-    return fetch("http://localhost:6298/transactions", options).then(
-      (response) => response.json()
-    );
+    const response = await fetch("http://localhost:6298/transactions", options);
+    return await response.json();
   }
 
   const handleChange = (e) => {
