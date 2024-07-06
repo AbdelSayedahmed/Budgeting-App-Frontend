@@ -1,5 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
-    return <h1>Nav</h1>
+  return (
+    <div className="nav-container">
+      <h1>BudgetWise</h1>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/transactions">Transactions</Link>
+        <Link to="/transactions/new">Add Transaction</Link>
+      </nav>
+    </div>
+  );
 }
