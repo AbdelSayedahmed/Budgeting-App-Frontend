@@ -6,7 +6,7 @@ export default function Transactions() {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:6298/transactions")
+    fetch("https://budgetwise-backend-server.onrender.com/transactions")
       .then((response) => response.json())
       .then((data) => setTransactions(data))
       .catch((error) => {

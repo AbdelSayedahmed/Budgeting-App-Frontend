@@ -8,9 +8,7 @@ export default function Transaction() {
   const navigate = useNavigate();
 
   async function getTransaction(transId) {
-    const response = await fetch(
-      `http://localhost:6298/transactions/${transId}`
-    );
+    const response = await fetch(`${process.env.REACT_APP_URL}${transId}`);
     return await response.json();
   }
 
@@ -24,7 +22,7 @@ export default function Transaction() {
     try {
       const options = { method: "DELETE" };
       const response = await fetch(
-        `http://localhost:6298/transactions/${id}`,
+        `https://budgetwise-backend-server.onrender.com/transactions/${id}`,
         options
       );
       if (response.ok) {
@@ -41,12 +39,22 @@ export default function Transaction() {
   return (
     <div className="transaction-container">
       <h3>{transaction.name}</h3>
-      <h4><strong>From:</strong> {transaction.from}</h4>
-      <p><strong>Amount:</strong> ${transaction.amount}</p>
-      <p><strong>Date:</strong> {dateFormatter2(transaction.date)}</p>
-      <p><strong>Category:</strong> {transaction.category}</p>
+      <h4>
+        <strong>From:</strong> {transaction.from}
+      </h4>
+      <p>
+        <strong>Amount:</strong> ${transaction.amount}
+      </p>
+      <p>
+        <strong>Date:</strong> {dateFormatter2(transaction.date)}
+      </p>
+      <p>
+        <strong>Category:</strong> {transaction.category}
+      </p>
       <div>
-        <button onClick={() => navigate(`/transactions/${id}/edit`)}>Edit</button>
+        <button onClick={() => navigate(`/transactions/${id}/edit`)}>
+          Edit
+        </button>
         <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
