@@ -45,7 +45,7 @@ export default function EditTransaction() {
 
   return (
     <div className="edit-form-container">
-      <h1>Edit Transaction</h1>
+      <h2>Edit Transaction</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>

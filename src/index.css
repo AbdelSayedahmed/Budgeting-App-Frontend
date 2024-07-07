@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    margin: 0px;
-    padding: 0px;
-    font-family: Bitter;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bitter', serif;
 }
 
 a {
@@ -16,14 +16,27 @@ a:hover {
     cursor: pointer;
 }
 
+button {
+    width: max-content;
+    padding: 5px 20px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-color: white;
+}
+
+button:hover {
+    background-color: #422b8a;
+    color: white;
+}
+
 .nav-container {
-    background-color: #848ccf;
-    padding: 20px 5px 0px 5px;
+    background-color: #422b8a;
+    padding: 20px 5px 0;
     border-bottom: 2px solid black;
 }
 
 .nav-container h1 {
-    margin: 0px;
+    margin: 0;
     padding: 20px;
     text-align: center;
     color: white;
@@ -40,7 +53,7 @@ a:hover {
 .nav-container nav a {
     border: 2px solid black;
     border-bottom: none;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;
     padding: 5px 20px;
     background-color: white;
     margin-right: 5px;
@@ -53,7 +66,7 @@ a:hover {
 
 .home-container {
     width: 60%;
-    margin: auto auto;
+    margin: auto;
     padding: 20px;
 }
 
@@ -67,12 +80,12 @@ a:hover {
 
 .transactions-container_minor {
     border-bottom: 2px solid black;
-    margin: 0px 100px 0px 100px;
+    margin: 0 100px;
 }
 
 .transactions-container div div {
     border: 2px solid black;
-    border-bottom: 0px;
+    border-bottom: 0;
     padding: 5px 20px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -81,7 +94,7 @@ a:hover {
 }
 
 .transaction-container {
-    margin: 10px auto 0px auto;
+    margin: 10px auto 0;
     width: 600px;
     text-align: center;
 }
@@ -92,15 +105,34 @@ a:hover {
     gap: 20px;
 }
 
-.transaction-container div button {
-    padding: 5px 20px;
-    border: 1px solid darkgrey;
-    border-radius: 5px;
-    background-color: white;
+.edit-form-container,
+.new-form-container {
+    width: max-content;
+    margin-left: 10px;
 }
 
-.transaction-container div button:hover {
-    background-color: grey;
-    cursor: pointer;
-    color: white;
+.edit-form-container form,
+.new-form-container form {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-form-container label,
+.new-form-container label {
+    font-weight: 600;
+}
+
+.edit-form-container input,
+.new-form-container input {
+    margin-left: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+}
+
+.edit-form-container button,
+.new-form-container button {
+    margin: auto;
 }
