@@ -15,54 +15,24 @@ export default function Transactions() {
       });
   }, []);
 
-  const getBudgetTotal = transactions.reduce((a, b) => {
-    if (b.category === "Income" || b.category === "income") {
-      return a + b.amount;
-    } else {
-      return a - b.amount;
-    }
-  }, 0);
-
-  const getBudgetTotalStyle = () => {
-    if (getBudgetTotal > 100) {
-      return { backgroundColor: "green", color: "white" };
-    } else if (getBudgetTotal >= 0 && getBudgetTotal <= 100) {
-      return { backgroundColor: "yellow", color: "black" };
-    } else {
-      return { backgroundColor: "red", color: "white" };
-    }
-  };
-
   return (
     <div className="transactions-container">
-      <h4
-        className="transactions-container_budget"
-        style={getBudgetTotalStyle()}
-      >
-        Budget Total: ${getBudgetTotal}
-      </h4>
-      <div className="transactions-container_minor">
-        <div>
-          <h3>Name</h3>
-          <h3>From</h3>
-          <p>Amount</p>
-          <p>Category</p>
-          <p>Date</p>
-        </div>
-        {transactions.map((transaction) => (
-          <div key={transaction.id}>
-            <h3>{transaction.name}</h3>
-            <h3>{transaction.from}</h3>
-            <p>${transaction.amount}</p>
-            <p>{transaction.category}</p>
-            <p>
-              {dateFormatter2(transaction.date)} (
-              {dateFormatter1(transaction.date)})
-            </p>
-            <Link to={`${transaction.id}`}>View Transaction</Link>
-          </div>
-        ))}
+      <div>
+        <h3>Date</h3>
+        <h3>Name</h3>
+        <h3>Amount</h3>
       </div>
+      {transactions.map((transaction) => (
+        <div key={transaction.id}>
+          <p>
+            {dateFormatter2(transaction.date)} (
+            {dateFormatter1(transaction.date)})
+          </p>
+          <p>{transaction.name}</p>
+          <p>${transaction.amount}</p>
+          <Link to={`${transaction.id}`}>View Transaction</Link>
+        </div>
+      ))}
     </div>
   );
 }
