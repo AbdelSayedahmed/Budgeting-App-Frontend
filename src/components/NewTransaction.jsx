@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { formatAmount } from "../functions";
 
 export default function NewTransaction() {
   const navigate = useNavigate();
@@ -23,10 +24,17 @@ export default function NewTransaction() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
+    if (name === "amount") {
+      setForm((prevForm) => ({
+        ...prevForm,
+        [name]: formatAmount(value),
+      }));
+    } else {
+      setForm((prevForm) => ({
+        ...prevForm,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -48,6 +56,7 @@ export default function NewTransaction() {
             name="name"
             value={form.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -58,6 +67,8 @@ export default function NewTransaction() {
             name="amount"
             value={form.amount}
             onChange={handleChange}
+            step="0.01"
+            required
           />
         </div>
         <div>
@@ -68,6 +79,7 @@ export default function NewTransaction() {
             name="date"
             value={form.date}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -78,6 +90,7 @@ export default function NewTransaction() {
             name="from"
             value={form.from}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -88,6 +101,7 @@ export default function NewTransaction() {
             name="category"
             value={form.category}
             onChange={handleChange}
+            required
           />
         </div>
         <button type="submit">Create Transaction</button>

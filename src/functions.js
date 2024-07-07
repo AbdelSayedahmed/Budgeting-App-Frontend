@@ -29,6 +29,7 @@ export function dateFormatter1(timestamp) {
 }
 
 export function dateFormatter2(dateString) {
+  if (!dateString) return "";
   const months = [
     "January",
     "February",
@@ -57,4 +58,13 @@ export function dateFormatter2(dateString) {
       : "th");
 
   return `${months[month - 1]} ${dayWithSuffix}, ${year}`;
+}
+
+export function formatAmount(value) {
+  const regex = /^\d*\.?\d{0,2}$/;
+  if (regex.test(value)) {
+    return value;
+  } else {
+    return parseFloat(value).toFixed(2);
+  }
 }
