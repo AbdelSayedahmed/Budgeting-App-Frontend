@@ -136,4 +136,4 @@ Basic styling is included in `index.css`. You can customize the styles as needed
 
 ## Backend Repository
 
-[Link](https://img.shields.io/badge/build-passing-brightgreen)
+[Link](https://github.com/AbdelSayedahmed/budgeting-app-backend)
