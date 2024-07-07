@@ -13,7 +13,7 @@ export default function EditTransaction() {
   });
 
   useEffect(() => {
-    fetch(`https://budgetwise-backend-server.onrender.com/transactions/${id}`)
+    fetch(`${process.env.REACT_APP_URL}${id}`)
       .then((response) => response.json())
       .then((data) => setForm(data));
   }, [id]);
@@ -24,10 +24,7 @@ export default function EditTransaction() {
       body: JSON.stringify(transaction),
       headers: { "Content-Type": "application/json" },
     };
-    const response = await fetch(
-      `https://budgetwise-backend-server.onrender.com/transactions/${id}`,
-      options
-    );
+    const response = await fetch(`${process.env.REACT_APP_URL}${id}`, options);
     return await response.json();
   }
 

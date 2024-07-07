@@ -18,10 +18,7 @@ export default function NewTransaction() {
       body: JSON.stringify(transaction),
       headers: { "Content-Type": "application/json" },
     };
-    const response = await fetch(
-      "https://budgetwise-backend-server.onrender.com/transactions",
-      options
-    );
+    const response = await fetch(process.env.REACT_APP_URL, options);
     return await response.json();
   }
 

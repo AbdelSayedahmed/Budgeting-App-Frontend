@@ -26,6 +26,7 @@ This project is a frontend application for BudgetWise, a budgeting and transacti
 ### Installation
 
 1. Clone the repository:
+
    ```sh
    git clone https://github.com/AbdelSayedahmed/budgeting-app-frontend.git
    cd budgeting-app-frontend
@@ -39,6 +40,7 @@ This project is a frontend application for BudgetWise, a budgeting and transacti
 ### Running the Application
 
 1. Start the development server:
+
    ```sh
    npm start
    ```
@@ -48,6 +50,7 @@ This project is a frontend application for BudgetWise, a budgeting and transacti
 ### Building for Production
 
 To create a production build of the application, run:
+
 ```sh
 npm run build
 ```

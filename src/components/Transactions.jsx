@@ -6,7 +6,7 @@ export default function Transactions() {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    fetch("https://budgetwise-backend-server.onrender.com/transactions")
+    fetch(process.env.REACT_APP_URL)
       .then((response) => response.json())
       .then((data) => setTransactions(data))
       .catch((error) => {
@@ -42,7 +42,10 @@ export default function Transactions() {
             <h3>{transaction.from}</h3>
             <p>${transaction.amount}</p>
             <p>{transaction.category}</p>
-            <p>{dateFormatter2(transaction.date)} ({dateFormatter1(transaction.date)})</p>
+            <p>
+              {dateFormatter2(transaction.date)} (
+              {dateFormatter1(transaction.date)})
+            </p>
             <Link to={`${transaction.id}`}>View Transaction</Link>
           </div>
         ))}

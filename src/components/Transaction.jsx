@@ -22,7 +22,7 @@ export default function Transaction() {
     try {
       const options = { method: "DELETE" };
       const response = await fetch(
-        `https://budgetwise-backend-server.onrender.com/transactions/${id}`,
+        `${process.env.REACT_APP_URL}${id}`,
         options
       );
       if (response.ok) {
