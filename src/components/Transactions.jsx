@@ -23,9 +23,22 @@ export default function Transactions() {
     }
   }, 0);
 
+  const getBudgetTotalStyle = () => {
+    if (getBudgetTotal > 100) {
+      return { backgroundColor: "green", color: "white" };
+    } else if (getBudgetTotal >= 0 && getBudgetTotal <= 100) {
+      return { backgroundColor: "yellow", color: "black" };
+    } else {
+      return { backgroundColor: "red", color: "white" };
+    }
+  };
+
   return (
     <div className="transactions-container">
-      <h4 className="transactions-container_budget">
+      <h4
+        className="transactions-container_budget"
+        style={getBudgetTotalStyle()}
+      >
         Budget Total: ${getBudgetTotal}
       </h4>
       <div className="transactions-container_minor">

@@ -76,6 +76,9 @@ button:hover {
 
 .transactions-container_budget {
     margin-left: 20px;
+    width: max-content;
+    padding: 5px 20px;
+    border-radius: 15px;
 }
 
 .transactions-container_minor {
