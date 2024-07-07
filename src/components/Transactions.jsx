@@ -14,9 +14,17 @@ export default function Transactions() {
       });
   }, []);
 
+  const getBudgetTotal = transactions.reduce((a, b) => {
+    if (b.category === "Income" || b.category === "income") {
+      return a + b.amount;
+    } else {
+      return a - b.amount;
+    }
+  }, 0);
 
   return (
     <div className="transactions-container">
+      <h4>Budget Total: ${getBudgetTotal}</h4>
       {transactions.map((transaction) => (
         <div key={transaction.id}>
           <h3>{transaction.name}</h3>
