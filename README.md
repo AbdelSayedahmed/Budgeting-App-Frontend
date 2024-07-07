@@ -133,3 +133,7 @@ Basic styling is included in `index.css`. You can customize the styles as needed
 - `react-router-dom`
 - `react-scripts`
 - `web-vitals`
+
+## Backend Repository
+
+[Link](https://img.shields.io/badge/build-passing-brightgreen)
