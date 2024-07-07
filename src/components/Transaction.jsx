@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { dateFormatter2 } from "../functions";
 
 export default function Transaction() {
   const [transaction, setTransaction] = useState({});
@@ -7,7 +8,9 @@ export default function Transaction() {
   const navigate = useNavigate();
 
   async function getTransaction(transId) {
-    const response = await fetch(`http://localhost:6298/transactions/${transId}`);
+    const response = await fetch(
+      `http://localhost:6298/transactions/${transId}`
+    );
     return await response.json();
   }
 
@@ -40,7 +43,7 @@ export default function Transaction() {
       <h3>{transaction.name}</h3>
       <h4>From: {transaction.from}</h4>
       <p>Amount: {transaction.amount}</p>
-      <p>Date: {transaction.date}</p>
+      <p>Date: {dateFormatter2(transaction.date)}</p>
       <p>Category: {transaction.category}</p>
       <button onClick={() => navigate(`/transactions/${id}/edit`)}>Edit</button>
       <button onClick={handleDelete}>Delete</button>

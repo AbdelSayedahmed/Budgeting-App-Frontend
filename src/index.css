@@ -4,7 +4,6 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: Bitter;
-    background-color: 2px solid black;
 }
 
 a {
@@ -20,7 +19,7 @@ a:hover {
 .nav-container {
     background-color: #848ccf;
     padding: 20px 5px 0px 5px;
-    border: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .nav-container h1 {
@@ -53,12 +52,30 @@ a:hover {
 }
 
 .home-container {
-    border: 1px solid black;
     width: 60%;
     margin: auto auto;
     padding: 20px;
 }
 
 .home-container h2 {
+    text-align: center;
+}
+
+.transactions-container_budget {
+    margin-left: 20px;
+}
+
+.transactions-container_minor {
+    border-bottom: 2px solid black;
+    margin: 0px 100px 0px 100px;
+}
+
+.transactions-container div div {
+    border: 2px solid black;
+    border-bottom: 0px;
+    padding: 5px 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
     text-align: center;
 }
