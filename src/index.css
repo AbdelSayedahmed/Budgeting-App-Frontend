@@ -79,3 +79,28 @@ a:hover {
     align-items: center;
     text-align: center;
 }
+
+.transaction-container {
+    margin: 10px auto 0px auto;
+    width: 600px;
+    text-align: center;
+}
+
+.transaction-container div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.transaction-container div button {
+    padding: 5px 20px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.transaction-container div button:hover {
+    background-color: grey;
+    cursor: pointer;
+    color: white;
+}
