@@ -28,6 +28,7 @@ export default function Transaction() {
       if (response.ok) {
         setTransaction({});
         navigate("/transactions");
+        window.location.reload();
       } else {
         console.error("Failed to delete transaction:", response.statusText);
       }

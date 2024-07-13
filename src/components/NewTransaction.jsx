@@ -41,6 +41,7 @@ export default function NewTransaction() {
     e.preventDefault();
     createTransaction(form).then((newTransaction) => {
       navigate(`/transactions/${newTransaction.id}`);
+      window.location.reload();
     });
   };
 

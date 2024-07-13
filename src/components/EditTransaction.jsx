@@ -40,6 +40,7 @@ export default function EditTransaction() {
     e.preventDefault();
     updateTransaction(form).then((updatedTransaction) => {
       navigate(`/transactions/${updatedTransaction.id}`);
+      window.location.reload();
     });
   };
 
